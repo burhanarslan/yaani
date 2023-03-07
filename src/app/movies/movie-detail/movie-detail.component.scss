@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.content-wrap {
+  height: 100%;
+  flex-direction: column;
+  text-align: center;
+  overflow-x: auto;
+  min-width: 360px;
+}

@@ -1,0 +1,7 @@
+<app-header (sideBarVisible)="sideBarVisible$.next($event)"></app-header>
+<section [@inOutPaneAnimation]="(sideBarVisible$ | async) ? 'enter':'leave'">
+  <app-sidebar></app-sidebar>
+  <main class="p-2">
+    <router-outlet></router-outlet>
+  </main>
+</section>

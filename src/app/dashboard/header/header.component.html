@@ -1,0 +1,15 @@
+<div class="px-4 py-2">
+  <button mat-icon-button class="menu-button"
+          (click)="sideBarVisible = !sideBarVisible; sideBarVisibleEvent.emit(sideBarVisible)">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <img src="https://www.yaanimail.com/assets/img/common/newLogo.png" alt="" style="width: 140px; height: auto">
+  <mat-form-field appearance="outline" class="col-24 ms-5 search-field" style="max-width: 300px">
+    <mat-label>Ara</mat-label>
+    <input matInput name="quantity" [ngModel]="search$ | async"
+           #quantityModel="ngModel" (ngModelChange)="searchEventAction$.next($event)"
+           [autocomplete]="'off'"
+    >
+    <span matSuffix class="ps-2"><mat-icon>search</mat-icon></span>
+  </mat-form-field>
+</div>

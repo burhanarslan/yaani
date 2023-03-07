@@ -1,0 +1,64 @@
+@import "variables";
+
+%text-contrast {
+  color: $color-contrast;
+}
+
+%text-error {
+  color: $color-error !important;
+}
+
+%text-success {
+  color: $color-success !important;
+}
+
+%card {
+  border-radius: 6px;
+  background: #fff;
+  padding: 10px;
+}
+
+%full-width {
+  width: 100% !important;
+}
+
+%clear {
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+$font-sizes: 'xx-small', 'x-small', 'smaller', 'medium', 'larger', 'x-large', 'xx-large';
+
+@each $size in $font-sizes {
+  %font-#{$size} {
+    font-size: #{$size};
+  }
+}
+
+$font-weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+
+@each $size in $font-weights {
+  %font-#{$size} {
+    font-weight: #{$size};
+  }
+}
+
+%module-page {
+  display: grid;
+  height: 100%;
+  grid-template-rows: minmax(0, 1fr);
+  grid-template-columns: 100%;
+  padding-bottom: 1em;
+  padding-left: 1em;
+  transform: translateX(10vw);
+  position: relative;
+}
+
+%transition {
+  transition: all .18s ease;
+}
+
+

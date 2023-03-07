@@ -1,0 +1,29 @@
+// Core files
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+
+$black: #000;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 600px,
+  md: 960px,
+  lg: 1280px,
+  xl: 1920px
+);
+
+$container-max-widths: (
+  xs: 599px,
+  sm: 959px,
+  md: 1279px,
+  lg: 1919px
+);
+
+$grid-columns: 24;
+$grid-gutter-width: 8px;
+
+@import 'bootstrap/scss/bootstrap';
+.row {
+  margin-left: -4px;
+  margin-right: -4px;
+}

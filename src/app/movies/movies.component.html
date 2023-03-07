@@ -1,0 +1,40 @@
+<mat-card style="height: 100%;" class="row d-flex p-0">
+  <app-section class="col-12 col-sm-12 col-md-10 col-lg-8 list-wrap">
+    <div section-header class="d-flex justify-content-end">
+      <mat-form-field class="col-24 col-sm-12 col-md-12 col-lg-12">
+        <mat-label>Sırala</mat-label>
+        <mat-select [ngModel]="activeSort$ | async" (ngModelChange)="changeSort($event)">
+          <mat-option *ngFor="let item of sortData" [value]="item.id">
+            {{item.title}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <ul ak-list style="display: grid">
+      <li ak-list-item *ngFor="let item of movies$ | async; trackBy : trackByFn;" [routerLink]="['./', item.id]"
+      [class.active]="item.id === (activeMovie$ | async)?.id">
+        <app-image-item [wide]="false">
+          <img [src]="item.images[0] || ''" alt="">
+          <span title>{{item?.title}}</span>
+          <div sub-title class="movie-genre-wrap text-center">
+            <span class="genre me-1 mb-1" *ngFor="let genre of item.genre">{{genre}}</span>
+          </div>
+          <span class="d-flex rate justify-content-end align-items-center"><mat-icon>star</mat-icon>
+            {{item.imdbRating}}</span>
+        </app-image-item>
+      </li>
+    </ul>
+    <mat-paginator section-footer class="mt-0"
+                   [hidePageSize]="true" [pageIndex]="pageIndex$ | async" (page)="pageIndex$.next($event.pageIndex)"
+                   [length]="moviesLength" [pageSizeOptions]="[12]" aria-label="Select page">
+    </mat-paginator>
+  </app-section>
+  <div class="col-12 col-sm-16 col-md-16 warning-message-wrap" *ngIf="!(activeMovie$ | async)">
+    <p class="warning-message">Detayını görüntülemek için bir film seçebilirsiniz</p>
+  </div>
+  <div class="col-12 col-sm-12 col-md-14 col-lg-16" *ngIf="(activeMovie$ | async)">
+    <router-outlet></router-outlet>
+  </div>
+</mat-card>
+

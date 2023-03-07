@@ -1,0 +1,16 @@
+<div class="wrapper">
+
+  <div class="image-item-wrapper">
+    <div class="image" *ngIf="image">
+      <ng-content select="img,[img]"></ng-content>
+    </div>
+    <div class="content">
+      <ng-content select="[title]"></ng-content>
+      <ng-content select="[sub-title]"></ng-content>
+      <ng-content select="[info]"></ng-content>
+    </div>
+  </div>
+  <div *ngIf="!wide" style="padding: 0 20px" class="wide">
+    <ng-content></ng-content>
+  </div>
+</div>

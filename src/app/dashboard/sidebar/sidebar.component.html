@@ -1,0 +1,14 @@
+<ul ak-list class="mt-2">
+  <li ak-list-item [class.active]="(activeCategory$ | async) === null"
+      class="d-flex justify-content-between" [routerLink]="['./']">
+    <span>Tümü</span>
+    <span>({{(movies$ | async)?.length}})</span>
+  </li>
+  <li ak-list-item [class.active]="(activeCategory$ | async) === cat.name"
+      *ngFor="let cat of categories$ | async; trackBy : trackByFn;"
+      class="d-flex justify-content-between" [routerLink]="['./']"
+      [queryParams]="{category:cat.name}">
+    <span>{{cat.name}}</span>
+    <span>({{cat.movieCount}})</span>
+  </li>
+</ul>

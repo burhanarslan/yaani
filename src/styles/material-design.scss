@@ -1,0 +1,90 @@
+@use '@angular/material' as mat;
+
+@import '@angular/material/theming';
+
+@include mat.core();
+$crypto-typography: mat.define-typography-config(
+  $font-family: 'nunito',
+  $input: mat.define-typography-level(12px, 1, 300)
+);
+
+$light-palette-secondary: (
+  50 : #e3f8f1,
+  100 : #b9eddd,
+  200 : #8ae1c7,
+  300 : #5bd5b0,
+  400 : #37cc9f,
+  500 : #14c38e,
+  600 : #12bd86,
+  700 : #0eb57b,
+  800 : #0bae71,
+  900 : #06a15f,
+  A100 : #ccffe7,
+  A200 : #99ffcf,
+  A400 : #66ffb7,
+  A700 : #4dffab,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $dark-primary-text,
+  )
+);
+
+$light-palette-primary: (
+  50: #e2e0f2,
+  100: #b6b3df,
+  200: #8580ca,
+  300: #544db4,
+  400: #2f26a4,
+  500: #0a0094,
+  600: #09008c,
+  700: #070081,
+  800: #050077,
+  900: #030065,
+  A100: #9595ff,
+  A200: #6262ff,
+  A400: #2f2fff,
+  A700: #1515ff,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $light-primary-text,
+  )
+);
+// Define a light theme
+$light-primary: mat.define-palette($light-palette-primary);
+$light-accent: mat.define-palette($light-palette-secondary);
+$light-warn: mat.define-palette(mat.$red-palette);
+$light-theme: mat.define-light-theme((
+  color: (
+    primary: $light-primary,
+    accent: $light-accent,
+    warn: $light-warn,
+  ),
+  typography: $crypto-typography,
+));
+@include mat.core-color($light-theme);
+@include mat.all-component-themes($light-theme);
+

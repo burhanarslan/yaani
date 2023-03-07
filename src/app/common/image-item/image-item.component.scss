@@ -1,0 +1,47 @@
+@import "variables";
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.image-item-wrapper {
+  flex-direction: var(--direction, row);
+  text-align: var(--textAling);
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  padding-right: 12px;
+
+  &::ng-deep {
+    > img {
+      height: auto;
+      border-radius: 6px;
+    }
+  }
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wide {
+  @media only screen and (max-width: 780px) {
+    display: none;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+
+  &::ng-deep {
+    > [sub-title] {
+      color: $color-secondary;
+    }
+  }
+}

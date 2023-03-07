@@ -1,0 +1,35 @@
+@import 'variables';
+
+[ak-list] {
+  list-style: none;
+  padding-left: 0;
+}
+
+[ak-list-item] {
+  padding: 4px 8px;
+  margin: 0;
+  cursor: pointer;
+  color: $color-secondary;
+
+ // border-bottom: 1px solid $color-secondary;
+  font-size: .875rem;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background: $color-contrast;
+    color: $color-primary;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &.active {
+    color: $color-primary;
+    background: $color-contrast;
+  }
+}

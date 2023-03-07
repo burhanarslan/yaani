@@ -1,0 +1,30 @@
+@import "variables";
+:host {
+  display: grid;
+  height: 100%;
+  grid-template-rows: max-content 1fr max-content;
+  grid-template-columns: 100%;
+}
+
+
+section {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding-right: var(--section-pr, 10px);
+  padding-left: var(--section-pl, 0);
+}
+
+footer {
+  ::ng-deep {
+    [section-footer] {
+      margin-top: 20px;
+    }
+  }
+}
+
+header {
+  border-bottom: 1px solid $color-contrast;
+}

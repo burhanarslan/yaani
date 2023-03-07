@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+@import "variables";
+@import "utils";
+@import "fonts";
+@import 'customizations';
+@import 'material-design';
+
+html, body {
+  height: 100%;
+}
+* {
+  font-family: $font-nunito;
+}
+body {
+  margin: 0;
+  background: $color-contrast;
+}
+
+
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 2px;
+  background-color: $color-contrast;
+  border-radius: 6px;
+}
+
+*:hover::-webkit-scrollbar {
+  height: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  width: 4px;
+  border-radius: 6px;
+  background-color: $color-primary;
+}

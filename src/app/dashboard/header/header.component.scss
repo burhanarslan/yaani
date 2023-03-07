@@ -1,0 +1,17 @@
+@import "variables";
+
+:host {
+  background: $color-white;
+  display: block;
+}
+
+.menu-button {
+  @media only screen and (min-width: 768px) {
+    display: none;
+  }
+}
+.search-field {
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+}
